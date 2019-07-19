@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Style/master.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="wrapp">
+      <header>
+        <div class="row conAvat">
+          <div class="col">
+            <img id="ava"src="img/avatar.png" alt="avatar"></img>
+          </div>
+        </div>
+        <div class="row inp">
+          <div class="col-12"><input class="form-control" type="text" placeholder="ИМЯ"></div>
+          <div class="col-12 mt-4"><input class="form-control" type="text" placeholder="ДАТА РОЖДЕНИЯ"></div>
+          <div class="col-12 mt-4"><input class="form-control" type="text" placeholder="ГОРОД"></div>
+          <div class="col-12 mt-4"><input class="form-control" type="text" placeholder="КОНТАКТНЫЕ ДАННЫЕ"></div>
+          <img class="stamp mb-3"src="img/stamp.png" alt=""></img>
+        </div>
+      </header>
+      <hr>
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+      <div class="mainCont">
+        <h5 class="skls">Навыки</h5>
+        <div class="row skills1">
+          <div class="col">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" name="html" class="custom-control-input" onclick="jsPlus(1)" id="customCheck1">
+              <label id="labell" class="custom-control-label" for="customCheck1">HTML5</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="custom-control custom-checkbox custom-control-inline">
+              <input type="checkbox" class="custom-control-input" onclick="jsPlus(1)" id="customCheck2">
+              <label id="labell" class="custom-control-label" for="customCheck2">SASS</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input " onclick="jsPlus(410)" id="customCheck3">
+              <label id="labell" class="custom-control-label" for="customCheck3">VANILLAJS</label>
+            </div>
+          </div>
+          <div class="col mr-3">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" onclick="jsPlus(410)" id="customCheck4">
+              <label id="labell" class="custom-control-label" for="customCheck4">GIT</label>
+            </div>
+          </div>
+        </div>
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+      <div class="row skills2">
+        <div class="col">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" onclick="jsPlus(1)" id="customCheck5">
+            <label id="labell" class="custom-control-label" for="customCheck5">CSS3</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" onclick="jsPlus(1)" id="customCheck6">
+            <label id="labell" class="custom-control-label" for="customCheck6">LESS</label>
+          </div>
+        </div>
+        <div class="col mr-1">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" onclick="jsPlus(410)" id="customCheck7">
+            <label id="labell" class="custom-control-label" for="customCheck7">ANGULAR</label>
+          </div>
+        </div>
+        <div class="col mr-3">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" onclick="jsPlus(410)" id="customCheck8">
+            <label id="labell" class="custom-control-label" for="customCheck8">FOUNDATION</label>
+          </div>
+        </div>
+      </div>
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+      <div class="row skills3">
+        <div class="col">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" onclick="jsPlus(410)" id="customCheck9">
+            <label id="labell" class="custom-control-label" for="customCheck9">БЭМ</label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" onclick="jsPlus(410)" id="customCheck10">
+            <label id="labell" class="custom-control-label" for="customCheck10">GULP</label>
+          </div>
+        </div>
+        <div class="col mr-1">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" onclick="jsPlus(410)" id="customCheck11">
+            <label id="labell" class="custom-control-label" for="customCheck11">JQUERY</label>
+          </div>
+        </div>
+        <div class="col mr-3">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" onclick="jsPlus(410)" id="customCheck12">
+            <label id="labell" class="custom-control-label" for="customCheck12">BOOTSTRAP</label>
+          </div>
+        </div>
+      </div>
+    </div>
+      <hr>
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+    <div class="row meter">
+      <div class="col metImage float-left">
+        <img id="meter" src="img/meter.png" alt="meter">
+        <img id="arrow"src="img/arrow.png" alt="arrow">
+        </div>
+
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+      <div class="col count float-right">
+        <p>Мой уровень владения <br>Java Script</p>
+        <label id="counter" for="">0</label>
+      </div>
+      </div>
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+    </div>
+    <script src="JS/main.js">
+    </script>
+  </body>
+</html>
