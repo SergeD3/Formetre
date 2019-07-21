@@ -1,48 +1,77 @@
-var countJS = 0;
-var testInp = [];
-testInp[0] = document.querySelector('#customCheck1');
-testInp[1] = document.querySelector('#customCheck2');
-testInp[2] = document.querySelector('#customCheck3');
-testInp[3] = document.querySelector('#customCheck4');
+// var countJS = 0;
+// function jsPlus(){
+//   var testInp = [];
+//   testInp[0] = document.querySelector('#customCheck1').checked;
+//   testInp[1] = document.querySelector('#customCheck2').checked;
+//   testInp[2] = document.querySelector('#customCheck3').checked;
+//   testInp[3] = document.querySelector('#customCheck4').checked;
+//
+//   testInp[4] = document.querySelector('#customCheck5').checked;
+//   testInp[5] = document.querySelector('#customCheck6').checked;
+//   testInp[6] = document.querySelector('#customCheck7').checked;
+//   testInp[7] = document.querySelector('#customCheck8').checked;
+//
+//   testInp[8] = document.querySelector('#customCheck9').checked;
+//   testInp[9] = document.querySelector('#customCheck10').checked;
+//   testInp[10] = document.querySelector('#customCheck11').checked;
+//   testInp[11] = document.querySelector('#customCheck12').checked;
+//
+// for (var i = 0; i < testInp.length; i++ ) {
+//   switch (testInp[i]) {
+//     case true: {
+//     countJS += 1;
+//     document.querySelector('#arrow').style.transform = 'rotate(' + (-50 + ((countJS * 180) / 100)) + 'deg)';
+//     document.querySelector('#counter').innerHTML = countJS;
+//   };   break;
+//     case false: {
+//     countJS -= 1;
+//     document.querySelector('#arrow').style.transform = 'rotate(' + (-50 + ((countJS * 180) / 100)) + 'deg)';
+//     document.querySelector('#counter').innerHTML = countJS;
+//   }; break;
+// }
+// }
+// };
 
-testInp[4] = document.querySelector('#customCheck5');
-testInp[5] = document.querySelector('#customCheck6');
-testInp[6] = document.querySelector('#customCheck7');
-testInp[7] = document.querySelector('#customCheck8');
 
-testInp[8] = document.querySelector('#customCheck9');
-testInp[9] = document.querySelector('#customCheck10');
-testInp[10] = document.querySelector('#customCheck11');
-testInp[11] = document.querySelector('#customCheck12');
 
-function jsPlus(){
-  if (testInp[0].checked === true || testInp[1].checked === true || testInp[4].checked === true || testInp[5].checked === true) {
-    console.log('Hello!');
-    countJS += 1;
-    document.querySelector('#arrow').style.transform = 'rotate(' + (-50 + ((countJS * 180) / 100)) + 'deg)';
-    document.querySelector('#counter').innerHTML = countJS;
-  }else if (testInp[2].checked === true || testInp[3].checked === true || testInp[6].checked === true || testInp[7].checked === true || testInp[8].checked === true || testInp[9].checked === true || testInp[10].checked === true || testInp[11].checked === true) {
-    countJS += 410;
-    document.querySelector('#arrow').style.transform = 'rotate(' + (-50 + ((countJS * 180) / 100)) + 'deg)';
-    document.querySelector('#counter').innerHTML = countJS;
-  }else {
-    countJS = 0;
+const COUNTER_STEP = 10;
+
+class Checkbox {
+  constructor(node) {
+    this.node = node;
+
+    if (!this.node) return;
+
+    this.counter = 0;
+
+    this.onClick = this.onClick.bind(this);
+
+    this.node.addEventListener('click', this.onClick, false);
+  }
+
+  onClick(e) {
+    const checkbox = e.target.closest('input[type="checkbox"]');
+
+    if (!checkbox) return;
+
+    this.isChecked(checkbox) ? this.decrease() : this.increase();
+  }
+
+  isChecked(checkbox) {
+    return !checkbox.checked;
+  }
+
+  increase() {
+    this.counter += COUNTER_STEP;
+    document.querySelector('#arrow').style.transform = 'rotate(' + (-50 + ((this.counter * 180) / 100)) + 'deg)';
+    document.querySelector('#counter').innerHTML = this.counter;
+  }
+
+  decrease() {
+    this.counter -= COUNTER_STEP;
+    document.querySelector('#arrow').style.transform = 'rotate(' + (-50 + ((this.counter * 180) / 100)) + 'deg)';
+    document.querySelector('#counter').innerHTML = this.counter;
   }
 }
 
-// testInp.addEventListener("change", function (){ 2,3,6,7,8,9,10,11
-//     if (testInp.checked) {
-//       console.log('Hello');
-//    }else {
-//      console.log('blya');
-//    }
-//    });
-
-
-// testInp.addEventListener("click", function (){
-//   if (testInp.checked) {
-//     console.log('Hello');
-//   }else {
-//     console.log('Blya');
-//   }
-// });
+new Checkbox(document.querySelector('.mainCont'));
